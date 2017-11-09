@@ -14,20 +14,10 @@
 
 package word2vec
 
-import (
-	"strings"
-)
-
 var next uint64 = 1
 
 // Linear congruential generator like rand.Intn(window)
 func nextRandom(value int) int {
 	next = next*uint64(25214903917) + 11
 	return int(next % uint64(value))
-}
-
-func lower(a []string) {
-	for i := range a {
-		a[i] = strings.ToLower(a[i])
-	}
 }
